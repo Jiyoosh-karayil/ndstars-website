@@ -276,6 +276,22 @@ ul { list-style: none; }
 
 .header-cta { font-size: 0.8rem; padding: 11px 26px; }
 
+.header-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-socials a {
+  color: var(--dark);
+  opacity: 0.55;
+  transition: opacity var(--trans);
+  display: flex;
+  align-items: center;
+}
+
+.header-socials a:hover { opacity: 1; }
+
 .burger {
   display: none;
   flex-direction: column;
