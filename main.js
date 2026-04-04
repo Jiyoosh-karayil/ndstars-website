@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* REVEAL ON SCROLL */
   const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
+    entries.forEach((e) => {
       if (e.isIntersecting) {
         if (!e.target.style.transitionDelay) {
           const siblings = Array.from(e.target.parentElement?.children || [])
@@ -113,6 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 96, behavior: 'smooth' });
     });
   });
+
+  /* STICKY BOOK BAR — slide up after 2s on mobile */
+  const stickyBook = document.getElementById('stickyBook');
+  if (stickyBook) {
+    setTimeout(() => stickyBook.classList.add('visible'), 2000);
+  }
 
   /* SERVICE CARD SUBTLE TILT */
   document.querySelectorAll('.service-card:not(.service-card--featured)').forEach(card => {
